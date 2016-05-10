@@ -1,4 +1,6 @@
-## Grafana dashboards for measuring MySQL performance with Prometheus
+My
+
+## Grafana dashboards for measuring MySQL performance with Prometheus and InfluxDB
 
 This is a set of Grafana dashboards to be used with Prometheus datasource for MySQL and system monitoring.
 The dashboards rely on `alias` label in the Prometheus config and depend from the small patch applied on Grafana.

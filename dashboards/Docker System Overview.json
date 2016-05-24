@@ -1,5 +1,5 @@
 {
-  "id": 1,
+  "id": 4,
   "title": "Docker System Overview",
   "originalTitle": "Docker System Overview",
   "tags": [],
@@ -15,43 +15,7 @@
       "height": "100px",
       "panels": [
         {
-          "title": "Containers Observed",
-          "error": false,
-          "span": 2,
-          "editable": true,
-          "type": "singlestat",
-          "isNew": true,
-          "id": 19,
-          "links": [],
-          "datasource": null,
-          "maxDataPoints": 100,
-          "interval": null,
-          "targets": [
-            {
-              "refId": "A",
-              "expr": "count(container_last_seen{name != \"\"})",
-              "intervalFactor": 2,
-              "step": 120
-            }
-          ],
           "cacheTimeout": null,
-          "format": "none",
-          "prefix": "",
-          "postfix": "",
-          "nullText": null,
-          "valueMaps": [
-            {
-              "value": "null",
-              "op": "=",
-              "text": "N/A"
-            }
-          ],
-          "nullPointMode": "connected",
-          "valueName": "avg",
-          "prefixFontSize": "50%",
-          "valueFontSize": "80%",
-          "postfixFontSize": "50%",
-          "thresholds": "",
           "colorBackground": false,
           "colorValue": false,
           "colors": [
@@ -59,12 +23,55 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "sparkline": {
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
             "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 19,
+          "interval": null,
+          "isNew": true,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
             "lineColor": "rgb(31, 120, 193)",
-            "fillColor": "rgba(31, 118, 189, 0.18)"
-          }
+            "show": false
+          },
+          "targets": [
+            {
+              "expr": "count(container_last_seen{name != \"\"})",
+              "intervalFactor": 2,
+              "refId": "A",
+              "step": 2
+            }
+          ],
+          "thresholds": "",
+          "title": "Containers Observed",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -79,6 +86,14 @@
           "editable": true,
           "error": false,
           "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
           "id": 1,
           "interval": null,
           "isNew": true,
@@ -109,6 +124,8 @@
             }
           ],
           "thresholds": "",
+          "timeFrom": "30s",
+          "timeShift": null,
           "title": "Containers Running (Last 30s)",
           "type": "singlestat",
           "valueFontSize": "80%",
@@ -119,10 +136,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "timeFrom": "30s",
-          "timeShift": null,
-          "hideTimeOverride": true
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -137,6 +151,14 @@
           "editable": true,
           "error": false,
           "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
           "id": 8,
           "interval": null,
           "isNew": true,
@@ -166,7 +188,7 @@
               "step": 1
             }
           ],
-          "thresholds": "0,60,80",
+          "thresholds": "60,80",
           "timeFrom": "30s",
           "timeShift": null,
           "title": "CPU Usage (Last 30s)",
@@ -179,8 +201,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "hideTimeOverride": true
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -195,6 +216,14 @@
           "editable": true,
           "error": false,
           "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
           "id": 6,
           "interval": null,
           "isNew": true,
@@ -225,7 +254,7 @@
               "step": 2
             }
           ],
-          "thresholds": "0,75,90",
+          "thresholds": "75,90",
           "timeFrom": "30s",
           "timeShift": null,
           "title": "Memory Usage (Last 30s)",
@@ -238,8 +267,7 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "hideTimeOverride": true
+          "valueName": "avg"
         },
         {
           "cacheTimeout": null,
@@ -254,6 +282,14 @@
           "editable": true,
           "error": false,
           "format": "percent",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": true,
           "id": 7,
           "interval": null,
           "isNew": true,
@@ -282,7 +318,7 @@
               "step": 2
             }
           ],
-          "thresholds": "0,80,90",
+          "thresholds": "80,90",
           "timeFrom": "30s",
           "title": "Filesystem Usage (Last 30s)",
           "type": "singlestat",
@@ -294,49 +330,10 @@
               "value": "null"
             }
           ],
-          "valueName": "avg",
-          "hideTimeOverride": true
+          "valueName": "avg"
         },
         {
-          "title": "Average Container Lifespan",
-          "error": false,
-          "span": 2,
-          "editable": true,
-          "type": "singlestat",
-          "isNew": true,
-          "id": 20,
-          "links": [],
-          "datasource": null,
-          "maxDataPoints": 100,
-          "interval": null,
-          "targets": [
-            {
-              "refId": "A",
-              "expr": "avg(container_last_seen{name != \"\"}) - avg(container_start_time_seconds{name != \"\"})",
-              "intervalFactor": 2,
-              "metric": "container_s",
-              "step": 120,
-              "legendFormat": ""
-            }
-          ],
           "cacheTimeout": null,
-          "format": "s",
-          "prefix": "",
-          "postfix": "",
-          "nullText": null,
-          "valueMaps": [
-            {
-              "value": "null",
-              "op": "=",
-              "text": "N/A"
-            }
-          ],
-          "nullPointMode": "connected",
-          "valueName": "avg",
-          "prefixFontSize": "50%",
-          "valueFontSize": "80%",
-          "postfixFontSize": "50%",
-          "thresholds": "",
           "colorBackground": false,
           "colorValue": false,
           "colors": [
@@ -344,12 +341,57 @@
             "rgba(237, 129, 40, 0.89)",
             "rgba(50, 172, 45, 0.97)"
           ],
-          "sparkline": {
+          "datasource": null,
+          "editable": true,
+          "error": false,
+          "format": "s",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
             "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 20,
+          "interval": null,
+          "isNew": true,
+          "links": [],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "span": 2,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
             "full": false,
             "lineColor": "rgb(31, 120, 193)",
-            "fillColor": "rgba(31, 118, 189, 0.18)"
-          }
+            "show": false
+          },
+          "targets": [
+            {
+              "expr": "avg(container_last_seen{name != \"\"}) - avg(container_start_time_seconds{name != \"\"})",
+              "intervalFactor": 2,
+              "legendFormat": "",
+              "metric": "container_s",
+              "refId": "A",
+              "step": 2
+            }
+          ],
+          "thresholds": "",
+          "title": "Average Container Lifespan",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "avg"
         }
       ],
       "showTitle": true,
@@ -364,16 +406,11 @@
           "aliasColors": {},
           "bars": false,
           "datasource": null,
+          "decimals": 2,
           "editable": true,
           "error": false,
           "fill": 1,
           "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
@@ -381,18 +418,21 @@
           },
           "id": 4,
           "isNew": true,
-          "leftYAxisLabel": "Cores",
           "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
             "show": true,
             "total": false,
-            "values": false
+            "values": true
           },
           "lines": true,
-          "linewidth": 2,
+          "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
           "percentage": false,
@@ -405,61 +445,71 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(rate(container_cpu_system_seconds_total{name != \"\"}[5m]))",
+              "expr": "sum(rate(container_cpu_system_seconds_total{name != \"\"}[10s]))",
               "intervalFactor": 1,
               "legendFormat": "Kernel",
               "metric": "",
               "refId": "A",
-              "step": 11
+              "step": 1
             },
             {
-              "expr": "sum(rate(container_cpu_user_seconds_total{name != \"\"}[5m])) ",
+              "expr": "sum(rate(container_cpu_user_seconds_total{name != \"\"}[10s])) ",
               "hide": false,
               "intervalFactor": 1,
               "legendFormat": "User",
               "metric": "",
               "refId": "B",
-              "step": 11
+              "step": 1
             },
             {
-              "expr": "sum(rate(container_cpu_usage_seconds_total{name != \"\"}[5m])) - sum(rate(container_cpu_system_seconds_total{name != \"\"}[5m])) - sum(rate(container_cpu_user_seconds_total{name != \"\"}[5m])) ",
+              "expr": "sum(rate(container_cpu_usage_seconds_total{name != \"\"}[10s])) - sum(rate(container_cpu_system_seconds_total{name != \"\"}[10s])) - sum(rate(container_cpu_user_seconds_total{name != \"\"}[10s])) ",
               "interval": "",
               "intervalFactor": 1,
               "legendFormat": "Total",
               "metric": "container_cpu_usage_seconds_total",
               "refId": "C",
-              "step": 11
+              "step": 1
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "CPU Usage",
           "tooltip": {
+            "msResolution": false,
             "shared": true,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "short",
-            "short"
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "Cores",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         },
         {
           "aliasColors": {},
           "bars": false,
           "datasource": null,
+          "decimals": 2,
           "editable": true,
           "error": false,
           "fill": 1,
           "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
@@ -467,18 +517,21 @@
           },
           "id": 9,
           "isNew": true,
-          "leftYAxisLabel": "Cores",
           "legend": {
-            "avg": false,
+            "alignAsTable": true,
+            "avg": true,
             "current": false,
-            "max": false,
+            "hideEmpty": true,
+            "hideZero": true,
+            "max": true,
             "min": false,
+            "rightSide": false,
             "show": true,
             "total": false,
-            "values": false
+            "values": true
           },
           "lines": true,
-          "linewidth": 2,
+          "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
           "percentage": false,
@@ -488,30 +541,45 @@
           "seriesOverrides": [],
           "span": 6,
           "stack": true,
-          "steppedLine": false,
+          "steppedLine": true,
           "targets": [
             {
-              "expr": "topk(10, rate(container_cpu_usage_seconds_total{name != \"\"}[5m]))",
-              "intervalFactor": 2,
-              "legendFormat": "{{ name }}",
-              "metric": "container_cpu_usage_seconds_total",
+              "expr": "sum(rate(container_cpu_usage_seconds_total{name != \"\"}[10s])) by (name)",
+              "intervalFactor": 1,
+              "legendFormat": "{{name}}",
+              "metric": "container_cpu_system_seconds_total",
               "refId": "A",
-              "step": 21
+              "step": 1
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "CPU Usage by Container (Top 10)",
           "tooltip": {
+            "msResolution": true,
             "shared": true,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "short",
-            "short"
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "Cores",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         }
       ],
@@ -531,12 +599,6 @@
           "error": false,
           "fill": 1,
           "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
@@ -544,7 +606,6 @@
           },
           "id": 2,
           "isNew": true,
-          "leftYAxisLabel": "",
           "legend": {
             "avg": false,
             "current": false,
@@ -562,51 +623,66 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "rightYAxisLabel": "",
           "seriesOverrides": [],
           "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(container_memory_working_set_bytes{name = \"\"}/1048576)",
+              "expr": "sum(container_memory_working_set_bytes{name = \"\"}/1024/1024)",
               "intervalFactor": 2,
               "legendFormat": "Hot",
               "metric": "container_memory_working_set_bytes",
               "refId": "B",
-              "step": 21
+              "step": 2
             },
             {
-              "expr": "sum(container_memory_usage_bytes{name = \"\"}/1048576)",
+              "expr": "sum(container_memory_usage_bytes{name = \"\"}/1024/1024)",
               "hide": false,
               "intervalFactor": 2,
               "legendFormat": "Total (Hot & Cold)",
               "metric": "container_memory_usage_bytes",
               "refId": "A",
-              "step": 21
+              "step": 2
             },
             {
-              "expr": "sum(container_spec_memory_limit_bytes{name = \"\"}/1048576)",
+              "expr": "sum(container_spec_memory_limit_bytes{name = \"\"}/1024/1024)",
               "intervalFactor": 2,
               "legendFormat": "Free",
               "metric": "container_spec_memory_limit_bytes",
               "refId": "C",
-              "step": 21
+              "step": 2
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Memory Usage",
           "tooltip": {
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
           "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "mbytes",
-            "short"
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "mbytes",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         },
         {
@@ -617,12 +693,6 @@
           "error": false,
           "fill": 1,
           "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
@@ -631,16 +701,17 @@
           "id": 10,
           "isNew": true,
           "legend": {
-            "avg": false,
+            "alignAsTable": true,
+            "avg": true,
             "current": false,
-            "max": false,
-            "min": false,
+            "max": true,
+            "min": true,
             "show": true,
             "total": false,
-            "values": false
+            "values": true
           },
           "lines": true,
-          "linewidth": 2,
+          "linewidth": 1,
           "links": [],
           "nullPointMode": "connected",
           "percentage": false,
@@ -650,30 +721,44 @@
           "seriesOverrides": [],
           "span": 6,
           "stack": true,
-          "steppedLine": false,
+          "steppedLine": true,
           "targets": [
             {
-              "expr": "topk(10,container_memory_usage_bytes{name !=\"\"} / 1024 / 1024)",
-              "intervalFactor": 2,
+              "expr": "sum(container_memory_usage_bytes{name !=\"\"} / 1024 / 1024) by (name)",
+              "intervalFactor": 1,
               "legendFormat": "{{ name }}",
               "metric": "container_memory_usage_bytes",
               "refId": "A",
-              "step": 21
+              "step": 1
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Memory Usage by Container (Top 10)",
           "tooltip": {
+            "msResolution": false,
             "shared": true,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "mbytes",
-            "short"
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "mbytes",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         }
       ],
@@ -693,12 +778,6 @@
           "error": false,
           "fill": 1,
           "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
@@ -706,7 +785,6 @@
           },
           "id": 12,
           "isNew": true,
-          "leftYAxisLabel": "",
           "legend": {
             "avg": false,
             "current": false,
@@ -717,9 +795,9 @@
             "values": false
           },
           "lines": true,
-          "linewidth": 2,
+          "linewidth": 1,
           "links": [],
-          "nullPointMode": "connected",
+          "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
           "points": false,
@@ -730,35 +808,50 @@
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(container_fs_reads_total[15m])",
+              "expr": "sum(rate(container_fs_reads_total[10s])) by (name, device)",
               "intervalFactor": 2,
-              "legendFormat": "{{ device }} Reads",
+              "legendFormat": "{{name}}:{{ device }} Reads",
               "metric": "container_fs_reads_total",
               "refId": "A",
-              "step": 21
+              "step": 2
             },
             {
-              "expr": "rate(container_fs_writes_total[15m])",
+              "expr": "sum(rate(container_fs_writes_total[10s])) by (name, device)",
               "intervalFactor": 2,
-              "legendFormat": "{{ device }} Writes",
+              "legendFormat": "{{name}}:{{ device }} Writes",
               "metric": "container_fs_writes_total",
               "refId": "B",
-              "step": 21
+              "step": 2
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Filesystem Activity",
           "tooltip": {
+            "msResolution": false,
             "shared": true,
             "value_type": "cumulative"
           },
           "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "iops",
-            "short"
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "iops",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         },
         {
@@ -769,12 +862,6 @@
           "error": false,
           "fill": 1,
           "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
@@ -782,7 +869,6 @@
           },
           "id": 13,
           "isNew": true,
-          "leftYAxisLabel": "Sectors",
           "legend": {
             "avg": false,
             "current": false,
@@ -800,42 +886,57 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "rightYAxisLabel": "",
           "seriesOverrides": [],
           "span": 6,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "rate(container_fs_sector_reads_total[15m])",
+              "expr": "sum(rate(container_fs_sector_reads_total[10s])) by (name, device)",
               "intervalFactor": 2,
-              "legendFormat": "{{ device }} Sectors Read",
+              "legendFormat": "{{name}}:{{ device }} Sectors Read",
               "metric": "",
               "refId": "A",
-              "step": 21
+              "step": 2
             },
             {
-              "expr": "rate(container_fs_sector_writes_total[15m])",
+              "expr": "sum(rate(container_fs_sector_writes_total[10s])) by (name, device)",
               "intervalFactor": 2,
-              "legendFormat": "{{ device }} Sectors Written",
+              "legendFormat": "{{name}}:{{ device }} Sectors Written",
               "metric": "container_fs_sector_writes_total",
               "refId": "B",
-              "step": 21
+              "step": 2
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Filesystem Throughput",
           "tooltip": {
+            "msResolution": false,
             "shared": true,
             "value_type": "cumulative"
           },
           "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "short",
-            "short"
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "Sectors",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         }
       ],
@@ -855,12 +956,6 @@
           "error": false,
           "fill": 1,
           "grid": {
-            "leftLogBase": 1,
-            "leftMax": 100,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
@@ -868,7 +963,6 @@
           },
           "id": 5,
           "isNew": true,
-          "leftYAxisLabel": "Percent used",
           "legend": {
             "avg": false,
             "current": false,
@@ -886,35 +980,50 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "rightYAxisLabel": "",
           "seriesOverrides": [],
           "span": 12,
           "stack": false,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "(container_fs_usage_bytes / container_fs_limit_bytes) * 100",
+              "expr": "sum((container_fs_usage_bytes / container_fs_limit_bytes) * 100) by (name, device)",
               "hide": false,
               "intervalFactor": 2,
-              "legendFormat": "{{ alias }}: {{ device }}",
+              "legendFormat": "{{ name }}: {{ device }}",
               "metric": "container_fs_usage_bytes",
               "refId": "A",
-              "step": 11
+              "step": 2
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Filesystem Usage",
           "tooltip": {
+            "msResolution": false,
             "shared": true,
             "value_type": "cumulative"
           },
           "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "percent",
-            "short"
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "Percent used",
+              "logBase": 1,
+              "max": 100,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         }
       ],
@@ -933,12 +1042,6 @@
           "error": false,
           "fill": 1,
           "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
@@ -946,7 +1049,6 @@
           },
           "id": 11,
           "isNew": true,
-          "leftYAxisLabel": "Bytes per second",
           "legend": {
             "avg": false,
             "current": false,
@@ -977,7 +1079,7 @@
               "legendFormat": "Tx bytes",
               "metric": "container_network_transmit_bytes_total",
               "refId": "A",
-              "step": 21
+              "step": 2
             },
             {
               "expr": "sum(rate(container_network_receive_bytes_total {name = \"\"}[5m]))",
@@ -985,22 +1087,37 @@
               "legendFormat": "Rx bytes",
               "metric": "",
               "refId": "B",
-              "step": 21
+              "step": 2
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Network Throughput",
           "tooltip": {
+            "msResolution": true,
             "shared": true,
             "value_type": "cumulative"
           },
           "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "Bps",
-            "short"
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "Bps",
+              "label": "Bytes per second",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         },
         {
@@ -1011,12 +1128,6 @@
           "error": false,
           "fill": 1,
           "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": 0,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": 0,
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
@@ -1024,7 +1135,6 @@
           },
           "id": 15,
           "isNew": true,
-          "leftYAxisLabel": "Errors per second",
           "legend": {
             "avg": false,
             "current": false,
@@ -1042,7 +1152,6 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "rightYAxisLabel": "",
           "seriesOverrides": [],
           "span": 6,
           "stack": false,
@@ -1054,29 +1163,45 @@
               "legendFormat": "Tx",
               "metric": "",
               "refId": "A",
-              "step": 21
+              "step": 2
             },
             {
               "expr": "sum(rate(container_network_receive_errors_total {name != \"\"}[5m]))",
               "intervalFactor": 2,
               "legendFormat": "Rx",
               "refId": "B",
-              "step": 21
+              "step": 2
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Network Errors",
           "tooltip": {
+            "msResolution": false,
             "shared": true,
             "value_type": "cumulative"
           },
           "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "short",
-            "short"
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "Errors per second",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            }
           ]
         }
       ],
@@ -1096,12 +1221,6 @@
           "error": false,
           "fill": 1,
           "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
@@ -1109,15 +1228,15 @@
           },
           "id": 14,
           "isNew": true,
-          "leftYAxisLabel": "Bytes per second",
           "legend": {
-            "avg": false,
+            "alignAsTable": true,
+            "avg": true,
             "current": false,
-            "max": false,
-            "min": false,
+            "max": true,
+            "min": true,
             "show": true,
-            "total": false,
-            "values": false
+            "total": true,
+            "values": true
           },
           "lines": true,
           "linewidth": 2,
@@ -1127,34 +1246,49 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "rightYAxisLabel": "",
           "seriesOverrides": [],
           "span": 6,
           "stack": true,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "topk(10, rate(container_network_transmit_bytes_total {name != \"\"}[5m]))",
+              "expr": "sum(rate(container_network_transmit_bytes_total {name != \"\"}[10s])) by (name)",
               "intervalFactor": 2,
               "legendFormat": "{{name }}",
               "metric": "",
               "refId": "A",
-              "step": 21
+              "step": 2
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Bytes (Tx) by Container (Top 10)",
           "tooltip": {
+            "msResolution": true,
             "shared": true,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "Bps",
-            "short"
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "Bps",
+              "label": "Bytes per second",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         },
         {
@@ -1165,12 +1299,6 @@
           "error": false,
           "fill": 1,
           "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": null,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": null,
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
@@ -1178,15 +1306,15 @@
           },
           "id": 16,
           "isNew": true,
-          "leftYAxisLabel": "Bytes per second",
           "legend": {
-            "avg": false,
+            "alignAsTable": true,
+            "avg": true,
             "current": false,
-            "max": false,
-            "min": false,
+            "max": true,
+            "min": true,
             "show": true,
-            "total": false,
-            "values": false
+            "total": true,
+            "values": true
           },
           "lines": true,
           "linewidth": 2,
@@ -1196,34 +1324,49 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "rightYAxisLabel": "",
           "seriesOverrides": [],
           "span": 6,
           "stack": true,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "topk(10, rate(container_network_receive_bytes_total {name != \"\"}[5m]))",
+              "expr": "sum(rate(container_network_receive_bytes_total {name != \"\"}[10s])) by (name)",
               "intervalFactor": 2,
               "legendFormat": "{{name }}",
               "metric": "",
               "refId": "A",
-              "step": 21
+              "step": 2
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Bytes (Rx) by Container (Top 10)",
           "tooltip": {
+            "msResolution": true,
             "shared": true,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "Bps",
-            "short"
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "Bps",
+              "label": "Bytes per second",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
           ]
         },
         {
@@ -1234,12 +1377,6 @@
           "error": false,
           "fill": 1,
           "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": 0,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": 0,
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
@@ -1247,7 +1384,6 @@
           },
           "id": 17,
           "isNew": true,
-          "leftYAxisLabel": "Errors per second",
           "legend": {
             "avg": false,
             "current": false,
@@ -1265,34 +1401,49 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "rightYAxisLabel": "",
           "seriesOverrides": [],
           "span": 6,
           "stack": true,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "topk(10, rate(container_network_transmit_errors_total {name != \"\"}[5m]))",
+              "expr": "sum(rate(container_network_transmit_errors_total {name != \"\"}[5m])) by (name)",
               "intervalFactor": 2,
               "legendFormat": "{{name }}",
               "metric": "",
               "refId": "A",
-              "step": 21
+              "step": 2
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Errors (Tx) by Container (Top 10)",
           "tooltip": {
+            "msResolution": false,
             "shared": true,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "Bps",
-            "short"
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "Bps",
+              "label": "Errors per second",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            }
           ]
         },
         {
@@ -1303,12 +1454,6 @@
           "error": false,
           "fill": 1,
           "grid": {
-            "leftLogBase": 1,
-            "leftMax": null,
-            "leftMin": 0,
-            "rightLogBase": 1,
-            "rightMax": null,
-            "rightMin": 0,
             "threshold1": null,
             "threshold1Color": "rgba(216, 200, 27, 0.27)",
             "threshold2": null,
@@ -1316,7 +1461,6 @@
           },
           "id": 18,
           "isNew": true,
-          "leftYAxisLabel": "Errors per second",
           "legend": {
             "avg": false,
             "current": false,
@@ -1334,43 +1478,65 @@
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
-          "rightYAxisLabel": "",
           "seriesOverrides": [],
           "span": 6,
           "stack": true,
           "steppedLine": false,
           "targets": [
             {
-              "expr": "topk(10, rate(container_network_receive_errors_total {name != \"\"}[5m]))",
+              "expr": "sum(rate(container_network_receive_errors_total {name != \"\"}[5m])) by (name)",
               "intervalFactor": 2,
               "legendFormat": "{{name }}",
               "metric": "",
               "refId": "A",
-              "step": 21
+              "step": 2
             }
           ],
           "timeFrom": null,
           "timeShift": null,
           "title": "Errors (Rx) by Container (Top 10)",
           "tooltip": {
+            "msResolution": false,
             "shared": true,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "type": "graph",
-          "x-axis": true,
-          "y-axis": true,
-          "y_formats": [
-            "Bps",
-            "short"
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "Bps",
+              "label": "Errors per second",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": "",
+              "logBase": 1,
+              "max": null,
+              "min": 0,
+              "show": true
+            }
           ]
         }
       ],
       "title": "New row"
+    },
+    {
+      "collapse": false,
+      "editable": true,
+      "height": "250px",
+      "panels": [],
+      "title": "New row"
     }
   ],
   "time": {
-    "from": "now-3h",
-    "to": "now"
+    "from": "2016-05-23T21:06:36.058Z",
+    "to": "2016-05-23T21:08:03.549Z"
   },
   "timepicker": {
     "now": true,
@@ -1407,6 +1573,7 @@
           "value": "db1"
         },
         "datasource": null,
+        "hide": 0,
         "includeAll": false,
         "label": "host",
         "multi": false,
@@ -1420,7 +1587,7 @@
           }
         ],
         "query": "label_values(alias)",
-        "refresh": false,
+        "refresh": 0,
         "type": "query"
       }
     ]
@@ -1428,7 +1595,8 @@
   "annotations": {
     "list": []
   },
-  "schemaVersion": 8,
-  "version": 20,
+  "refresh": false,
+  "schemaVersion": 12,
+  "version": 2,
   "links": []
 }

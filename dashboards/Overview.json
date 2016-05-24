@@ -641,34 +641,37 @@
           "id": 8,
           "isNew": true,
           "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
             "show": true,
             "total": false,
-            "values": false
+            "values": true,
+            "hideEmpty": true,
+            "hideZero": true,
+            "alignAsTable": true
           },
           "lines": true,
           "linewidth": 2,
           "links": [],
-          "nullPointMode": "connected",
+          "nullPointMode": "null",
           "percentage": false,
           "pointradius": 5,
           "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
           "span": 6,
-          "stack": false,
-          "steppedLine": true,
+          "stack": true,
+          "steppedLine": false,
           "targets": [
             {
-              "expr": "sum(apache_reqPerSec) by (alias)",
-              "intervalFactor": 2,
-              "legendFormat": "{{ alias }}",
+              "expr": "apache_reqPerSec",
+              "intervalFactor": 1,
+              "legendFormat": "",
               "metric": "apache_reqPerSec",
               "refId": "A",
-              "step": 2
+              "step": 1
             }
           ],
           "timeFrom": null,
@@ -677,7 +680,7 @@
           "tooltip": {
             "msResolution": false,
             "shared": true,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "type": "graph",
           "xaxis": {
@@ -700,7 +703,8 @@
               "min": null,
               "show": true
             }
-          ]
+          ],
+          "transparent": false
         }
       ],
       "title": "New row"
@@ -828,6 +832,6 @@
   },
   "refresh": "10s",
   "schemaVersion": 12,
-  "version": 5,
+  "version": 6,
   "links": []
 }
